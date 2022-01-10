@@ -82,12 +82,8 @@ namespace demo_DI
 
             }else if (t.IsInterface)
             {
-                
-                foreach(var item in typeDictionary)
-                {
-                    if (item.Key == t)
-                        classType = item.Value;
-                }
+
+                classType = typeDictionary[t];
 
                 var finalInstance = (T)Activator.CreateInstance(classType);
 
